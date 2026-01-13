@@ -1,0 +1,234 @@
+.default-component {
+    /* Base styles */
+    height: 100dvh;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+    color: #4a5568; /* More readable text color */
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+
+    /* Typography */
+    p,
+    .text-button,
+    .checkbox-label-widget {
+        line-height: 1.4; /* Better readability */
+        margin: 0;
+    }
+
+   input:not([type="image"], [type="range"], [type="checkbox"], [type="radio"]), select, button[class^="button-widget"] {
+        height: 70px!important;
+   }
+
+    /* Navbar styles */
+    .default-navbar .navbar-items-item-widget a {
+        font-size: 0.9rem;
+    }
+
+    /* Appbar component */
+    .default-appbar-component {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0px;
+        left: 0px;
+        padding: 1rem 1.5rem;
+        z-index: 998;
+        background: rgba(255, 255, 255, 0.85); /* Semi-transparent */
+        backdrop-filter: blur(10px); /* Glass effect */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+        .default-appbar-actions-component {
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            gap: 24px; /* Consistent spacing */
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    /* Content area */
+    .default-content-area-component {
+        flex-grow: 1;
+        background-color: #f8faff;
+        width: 100%;
+        max-width: 100%;
+        padding-bottom: 82px;
+    }
+
+    /* Bottombar component */
+    .default-bottombar-component {
+        z-index: 998;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border-radius: 24px;
+        justify-content: space-around; /* Better item distribution */
+        align-items: center;
+        width: 98%;
+        height: 82px; /* Slightly narrower for modern look */
+        display: flex;
+        position: fixed;
+        margin-bottom: 0.75rem;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0.5rem;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+
+        .default-bottombar-item-component {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0.5rem 0.75rem;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+            flex: 1; /* Equal width items */
+            min-width: 60px; /* Prevents squeezing */
+
+            > p {
+                font-size: 0.75rem;
+                padding: 0.25rem 0.5rem;
+                border-radius: 12px;
+                margin-top: 4px;
+                font-weight: 500;
+                transition: all 0.2s ease;
+            }
+
+            &.active {
+                transform: translateY(-8px); /* Float effect */
+                > p {
+                    background: #4361ee; /* Vibrant blue */
+                    color: white !important;
+                }
+            }
+
+            &:hover:not(.active) {
+                background: rgba(0, 0, 0, 0.03);
+            }
+        }
+    }
+
+    /* Card component */
+    .card-component {
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        margin-bottom: 2rem;
+        position: relative;
+        overflow: hidden;
+        border-left: 4px solid var(--primary-border-color);
+        padding-left: calc(1.5rem + 4px);
+        box-shadow: none;
+
+        &:hover {
+            transform: translateY(0);
+            box-shadow: none;
+        }
+
+        .card-header-component {
+            background: none;
+            background-image: none;
+            padding: 0;
+
+            .card-header-container-component {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 1rem;
+                gap: 1rem;
+                width: 100%;
+            }
+
+            h3 {
+                font-size: 1.125rem;
+                margin-bottom: 0;
+                flex-grow: 1;
+                font-weight: 600;
+                padding: 1rem;
+            }
+        }
+
+        .card-body-component {
+            .details-component {
+                .details-item-component {
+                    border-bottom: 1px solid #e5e7eb4d;
+
+                    .details-item-label {
+                        font-size: 0.8rem;
+                        margin-bottom: 0.125rem;
+                    }
+
+                    .details-item-value {
+                        font-size: .9rem;
+                        font-weight: 600;
+                    }
+                }
+            }
+
+            .progress-container-component {
+                margin-top: 1.5rem;
+                margin-bottom: 1.5rem;
+                width: 100%;
+
+                .progress-container-header-component {
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 0.8rem;
+                    color: #718096;
+                    margin-bottom: 0.5rem;
+                }
+
+                .progress-container-bar-component {
+                    height: 8px;
+                    background: #edf2f7;
+                    border-radius: 6px;
+                    overflow: hidden;
+
+                    .progress-container-fill-component {
+                        height: 100%;
+                        background: #4361ee;
+                        border-radius: 6px;
+                        transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+                    }
+                }
+            }
+        }
+    }
+
+    /* Input components */
+    .prefixIcon-input-component,
+    .suffixIcon-input-component {
+        height: 80%;
+        width: 4rem;
+        background: linear-gradient(to bottom, #007bff, #0062cc);
+        position: absolute;
+        right: 5px !important;
+        border-radius: 0.75rem 0 0.75rem 0;
+        border: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 600;
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        i {
+            color: #fff;
+        }
+    }
+
+    .prefixIcon-input-component {
+        left: 5px !important;
+    }
+}

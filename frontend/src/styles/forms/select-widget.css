@@ -1,0 +1,245 @@
+@import "./_variables.css";
+
+/* SIZE MODIFIERS */
+.select-widget--xsmall {
+    padding: 4px 8px;
+    font-size: .75rem;
+    border-radius: .25rem;
+    height: 2rem;
+}
+
+.select-widget--small {
+    padding: 6px 12px;
+    font-size: .85rem;
+    border-radius: .375rem;
+    height: 2.25rem;
+}
+
+.select-widget--medium {
+    padding: 8px 16px;
+    font-size: .9rem;
+    border-radius: .5rem;
+    height: 2.5rem;
+}
+
+.select-widget--large {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: .625rem;
+    height: 2.75rem;
+}
+
+.select-widget--xlarge {
+    padding: 12px 24px;
+    font-size: 1.125rem;
+    border-radius: .75rem;
+    height: 3rem;
+}
+
+/* VARIANT MODIFIERS */
+.select-widget--primary {
+    --select-bg: var(--primary);
+    --select-text-color: var(--primary-text-color);
+    --select-border-color: var(--primary-border-color);
+    --select-hover-color: var(--primary-text-hover-color);
+    --select-focus-color: var(--primary-focus-color);
+    --select-label-color: var(--primary-text-color)
+}
+
+.select-widget--default {
+    --select-bg: var(--basic);
+    --select-text-color: var(--basic-text-color);
+    --select-border-color: var(--basic-border-color);
+    --select-hover-color: var(--basic-text-hover-color);
+    --select-focus-color: var(--basic-focus-color);
+    --select-label-color: var(--basic-text-color)
+}
+
+.select-widget--secondary {
+    --select-bg: var(--secondary);
+    --select-text-color: var(--secondary-text-color);
+    --select-border-color: var(--secondary-border-color);
+    --select-hover-color: var(--secondary-text-hover-color);
+    --select-focus-color: var(--secondary-focus-color);
+    --select-label-color: var(--secondary-text-color)
+}
+
+.select-widget--danger {
+    --select-bg: var(--danger);
+    --select-text-color: var(--danger-text-color);
+    --select-border-color: var(--danger-border-color);
+    --select-hover-color: var(--danger-text-hover-color);
+    --select-focus-color: var(--danger-focus-color);
+    --select-label-color: var(--danger-text-color)
+}
+
+.select-widget--info {
+    --select-bg: var(--info);
+    --select-text-color: var(--info-text-color);
+    --select-border-color: var(--info-border-color);
+    --select-hover-color: var(--info-text-hover-color);
+    --select-focus-color: var(--info-focus-color);
+    --select-label-color: var(--info-text-color)
+}
+
+.select-widget--warning {
+    --select-bg: var(--warning);
+    --select-text-color: var(--warning-text-color);
+    --select-border-color: var(--warning-border-color);
+    --select-hover-color: var(--warning-text-hover-color);
+    --select-focus-color: var(--warning-focus-color);
+    --select-label-color: var(--warning-text-color)
+}
+
+.select-widget--success {
+    --select-bg: var(--success);
+    --select-text-color: var(--success-text-color);
+    --select-border-color: var(--success-border-color);
+    --select-hover-color: var(--success-text-hover-color);
+    --select-focus-color: var(--success-focus-color);
+    --select-label-color: var(--success-text-color)
+}
+
+.select-widget--error {
+    --select-bg: var(--error);
+    --select-text-color: var(--error-text-color);
+    --select-border-color: var(--error-border-color);
+    --select-hover-color: var(--error-text-hover-color);
+    --select-focus-color: var(--error-focus-color);
+    --select-label-color: var(--error-text-color)
+}
+
+/* CONTAINERS */
+.select-outter-container-widget {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: var(--gap, 8px);
+}
+
+.select-inner-container-widget {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: var(--gap, 8px);
+}
+
+.select-inner-container-widget i {
+    color: var(--select-text-color);
+    transition: color .3s ease;
+}
+
+/* LABEL */
+.select-label-widget {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all .3s cubic-bezier(.4, 0, .2, 1);
+    color: var(--select-label-color);
+    padding: 0 4px;
+    z-index: 1;
+    pointer-events: none;
+    background: var(--select-bg, var(--select-bg-color));
+    font-size: .9rem;
+}
+
+.select-label-floating-widget {
+    top: 0;
+    font-size: .75rem;
+    background-color: transparent;
+    transform: translateY(-50%) scale(.9);
+}
+
+/* INPUT BASE */
+.select-widget {
+    display: block;
+    width: 100%;
+    line-height: 1.5;
+    color: var(--select-text-color);
+    background: var(--select-bg, var(--select-bg-color));
+    border: 1px solid var(--select-border-color);
+    outline: none;
+    transition: all .3s cubic-bezier(.4, 0, .2, 1);
+    box-shadow: 0 1px 3px var(--shadow-color-10);
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.select-widget::placeholder {
+    color: var(--select-text-color);
+    opacity: .6;
+}
+
+.select-widget:hover {
+    border-color: var(--select-hover-border-color);
+    box-shadow: 0 2px 6px var(--shadow-color-15);
+    transform: translateY(-1px);
+}
+
+.select-widget:focus {
+    border-color: var(--select-focus-color);
+    box-shadow: 0 0 0 3px var(--select-focus-color);
+    transform: scale(1.005);
+}
+
+.select-widget:disabled {
+    background-color: #f7fafc;
+    opacity: .7;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.select-invalid-state-widget {
+    border-color: var(--select-error-color);
+    box-shadow: 0 0 0 3px var(--select-error-shadow);
+}
+
+/* ERROR */
+.select-error-message-widget {
+    color: var(--select-error-color);
+    font-size: .75rem;
+    margin-top: 4px;
+    display: none;
+    width: 100%;
+    text-align: left;
+    font-weight: 500;
+}
+
+.select-error-message-widget.show {
+    display: block;
+    animation: slideDownFadeIn .3s ease;
+}
+
+@keyframes slideDownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+    .select-widget,
+    .select-container-widget,
+    .select-label-widget,
+    .select-error-message-widget {
+        transition: none;
+    }
+    @keyframes slideDownFadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+}

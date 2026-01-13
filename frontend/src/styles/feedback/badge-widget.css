@@ -1,0 +1,138 @@
+@import url('../root.css');
+
+:root {
+    --shadow-color: #000000;
+    --shadow-color-10: #0000001a;
+    --shadow-color-15: #00000026;
+
+    --badge-icon-close-color: #ffffffb3;
+}
+
+/* Size Modifiers for Badge */
+.badge-widget--xsmall {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    border-radius: 4px;
+}
+
+.badge-widget--small {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    border-radius: 6px;
+}
+
+.badge-widget--medium {
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 8px;
+}
+
+.badge-widget--large {
+    padding: 16px 32px;
+    font-size: 1.125rem;
+    border-radius: 10px;
+}
+
+.badge-widget--xlarge {
+    padding: 20px 40px;
+    font-size: 1.25rem;
+    border-radius: 12px;
+}
+
+/* Theme-specific variables for Badge */
+.badge-widget--info {
+    --badge-bg: var(--info);
+    --badge-text-color: var(--info-text-color);
+    --badge-border-color: var(--info-border-color);
+    --badge-hover-color: var(--info-text-hover-color);
+    --badge-focus-color: var(--info-focus-color);
+    --badge-icon: var(--info-icon);
+}
+
+.badge-widget--warning {
+    --badge-bg: var(--warning);
+    --badge-text-color: var(--warning-text-color);
+    --badge-border-color: var(--warning-border-color);
+    --badge-hover-color: var(--warning-text-hover-color);
+    --badge-focus-color: var(--warning-focus-color);
+    --badge-icon: var(--warning-icon);
+}
+
+.badge-widget--success {
+    --badge-bg: var(--success);
+    --badge-text-color: var(--success-text-color);
+    --badge-border-color: var(--success-border-color);
+    --badge-hover-color: var(--success-text-hover-color);
+    --badge-focus-color: var(--success-focus-color);
+    --badge-icon: var(--success-icon);
+}
+
+.badge-widget--primary {
+    --badge-bg: var(--primary);
+    --badge-text-color: var(--primary-text-color);
+    --badge-border-color: var(--primary-border-color);
+    --badge-hover-color: var(--primary-text-hover-color);
+    --badge-focus-color: var(--primary-focus-color);
+    --badge-icon: var(--primary-icon);
+}
+
+.badge-widget--secondary {
+    --badge-bg: var(--secondary);
+    --badge-text-color: var(--secondary-text-color);
+    --badge-border-color: var(--secondary-border-color);
+    --badge-hover-color: var(--secondary-text-hover-color);
+    --badge-focus-color: var(--secondary-focus-color);
+    --badge-icon: var(--secondary-icon);
+}
+
+.badge-widget--error {
+    --badge-bg: var(--error);
+    --badge-text-color: var(--error-text-color);
+    --badge-border-color: var(--error-border-color);
+    --badge-hover-color: var(--error-text-hover-color);
+    --badge-focus-color: var(--error-focus-color);
+    --badge-icon: var(--error-icon);
+}
+
+.badge-widget {
+    background: var(--badge-bg);
+    color: var(--badge-text-color);
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow-color-10);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    gap: 12px;
+    position: relative;
+}
+
+.badge-widget:hover {
+    opacity: 1;
+}
+
+.badge-close-icon-widget {
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: auto;
+    opacity: 0.6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease;
+    will-change: opacity;
+}
+
+.badge-close-icon-widget svg {
+    fill: #fff;
+}
+
+.badge-icon-widget {
+    font-family: inherit;
+    background-image: var(--badge-icon);
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+}

@@ -1,0 +1,178 @@
+/* ==================== GALLERY IMAGE VIEWER ==================== */
+
+.gallery-bottom-sheet {
+  max-height: 100vh !important;
+  height: 100vh !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+}
+
+/* Full-screen slide container */
+.gallery-slide-container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: pan-y pinch-zoom;
+  user-select: none;
+  overflow: hidden;
+  animation: viewerFadeIn 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes viewerFadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Main image */
+.gallery-slide-image,
+.gallery-viewer-image {
+  max-height: 95vh;
+  max-width: 95vw;
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #000;
+}
+
+/* Zoom state */
+.gallery-viewer-image {
+  transform: scale(1);
+}
+
+/* Navigation arrows */
+.gallery-navigation-controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  pointer-events: none;
+  z-index: 50;
+}
+
+.gallery-nav-button {
+  pointer-events: all !important;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: white;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-nav-button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.1);
+}
+
+.gallery-nav-button:active {
+  transform: scale(0.95);
+}
+
+/* Main photo badge */
+.gallery-main-badge .badge {
+  background: linear-gradient(135deg, #007bff 0%, #0062cc 100%) !important;
+  color: white !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  padding: 6px 12px !important;
+  border-radius: 20px !important;
+  box-shadow: 0 4px 16px rgba(0, 123, 255, 0.4) !important;
+  animation: badge-glow 2s infinite !important;
+}
+
+@keyframes badge-glow {
+  0%, 100% { box-shadow: 0 4px 16px rgba(0,123,255,0.4); }
+  50%      { box-shadow: 0 4px 24px rgba(0,123,255,0.6); }
+}
+
+/* Drag / swipe hint */
+.gallery-drag-hint {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  color: white;
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  z-index: 40;
+}
+
+.gallery-drag-hint.visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-4px);
+}
+
+/* Loading spinner during transitions (optional enhancement) */
+.gallery-slide-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  opacity: 0;
+  animation: spin 1s linear infinite;
+  z-index: 35;
+  pointer-events: none;
+}
+
+.gallery-slide-container.transitioning::before {
+  opacity: 1;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gallery-nav-button {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+  }
+
+  .gallery-drag-hint {
+    bottom: 80px;
+    font-size: 13px;
+    padding: 8px 20px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .gallery-slide-image,
+  .gallery-viewer-image {
+    background: #000;
+  }
+}

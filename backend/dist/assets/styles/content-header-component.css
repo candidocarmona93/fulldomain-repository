@@ -1,0 +1,40 @@
+@import url("./root.css");
+
+.content-header-component {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    width: 100%;
+
+    .content-header-actions-component {
+        display: flex;
+        gap: 16px;
+        margin-left: auto;
+
+        .actions-filter-component,
+        .actions-sort-component,
+        .actions-back-component {
+            padding: 8px 16px;
+            background: var(--color-surface);
+            border-radius: var(--radius-medium);
+            box-shadow: var(--box-shadow-small);
+            color: var(--text-color-secondary);
+
+            i {
+                color: var(--text-color-secondary);
+                transition: var(--transition-default);
+            }
+
+            &:hover {
+                background: var(--bg-primary);
+                box-shadow: var(--box-shadow-medium);
+                color: var(--color-surface);
+
+                i {
+                    color: var(--color-surface);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,240 @@
+/* src/styles/utilities/position-widget.css */
+@import "../root.css";
+
+:root {
+    /* Alignment values (reusable) */
+    --flex-start: flex-start;
+    --flex-end: flex-end;
+    --flex-center: center;
+    /* Positioning offsets (customizable if needed) */
+    --position-offset: 10px;
+}
+
+/* Flex container */
+.position-widget-flex-container {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* Absolute container */
+.position-widget-absolute-container {
+    margin: 0 !important;
+}
+
+/* FLEX ALIGNMENTS */
+.position-widget-flex-start {
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.position-widget-flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.position-widget-flex-end {
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.position-widget-flex-top {
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.position-widget-flex-bottom {
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.position-widget-flex-center-left {
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.position-widget-flex-center-right {
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.position-widget-flex-top-left {
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.position-widget-flex-top-right {
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.position-widget-flex-bottom-left {
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.position-widget-flex-bottom-right {
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+/* ABSOLUTE POSITIONING — PERFECT CENTER INCLUDED */
+.position-widget-absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.position-widget-absolute-top-left {
+    position: absolute;
+    top: var(--position-offset);
+    left: var(--position-offset);
+}
+
+.position-widget-absolute-top-right {
+    position: absolute;
+    top: var(--position-offset);
+    right: var(--position-offset);
+}
+
+.position-widget-absolute-bottom-left {
+    position: absolute;
+    bottom: var(--position-offset);
+    left: var(--position-offset);
+}
+
+.position-widget-absolute-bottom-right {
+    position: absolute;
+    bottom: var(--position-offset);
+    right: var(--position-offset);
+}
+
+.position-widget-absolute-top {
+    position: absolute;
+    top: var(--position-offset);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.position-widget-absolute-bottom {
+    position: absolute;
+    bottom: var(--position-offset);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.position-widget-absolute-left {
+    position: absolute;
+    left: var(--position-offset);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.position-widget-absolute-right {
+    position: absolute;
+    right: var(--position-offset);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.position-widget-fixed-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.position-widget-fixed-top-left {
+    position: fixed;
+    top: var(--position-offset);
+    left: var(--position-offset);
+}
+
+.position-widget-fixed-top-right {
+    position: fixed;
+    top: var(--position-offset);
+    right: var(--position-offset);
+}
+
+.position-widget-fixed-bottom-left {
+    position: fixed;
+    bottom: var(--position-offset);
+    left: var(--position-offset);
+}
+
+.position-widget-fixed-bottom-right {
+    position: fixed;
+    bottom: var(--position-offset);
+    right: var(--position-offset);
+}
+
+.position-widget-fixed-top {
+    position: fixed;
+    top: var(--position-offset);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.position-widget-fixed-bottom {
+    position: fixed;
+    bottom: var(--position-offset);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.position-widget-fixed-left {
+    position: fixed;
+    left: var(--position-offset);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.position-widget-fixed-right {
+    position: fixed;
+    right: var(--position-offset);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Z-INDEX */
+.position-widget-z-0 {
+    z-index: 0;
+}
+
+.position-widget-z-1 {
+    z-index: 1;
+}
+
+.position-widget-z-10 {
+    z-index: 10;
+}
+
+.position-widget-z-20 {
+    z-index: 20;
+}
+
+.position-widget-z-30 {
+    z-index: 30;
+}
+
+.position-widget-z-40 {
+    z-index: 40;
+}
+
+.position-widget-z-50 {
+    z-index: 50;
+}
+
+.position-widget-z-60 {
+    z-index: 60;
+}
+
+.position-widget-z-999 {
+    z-index: 999;
+}
+
+.position-widget-z-9999 {
+    z-index: 9999;
+}

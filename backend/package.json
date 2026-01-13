@@ -1,0 +1,36 @@
+{
+  "name": "compeed",
+  "description": "A lightning-fast, component-based JavaScript framework for building modern web applications.",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "clean": "rd /s /q dist 2>nul || rm -rf dist"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-legacy": "^5.4.2",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "vite": "^5.4.8"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.2",
+    "@fullcalendar/core": "^6.1.19",
+    "@fullcalendar/daygrid": "^6.1.19",
+    "@fullcalendar/interaction": "^6.1.19",
+    "@fullcalendar/timegrid": "^6.1.19",
+    "@googlemaps/js-api-loader": "^2.0.2",
+    "date-fns": "^4.1.0",
+    "firebase": "^12.6.0",
+    "jspdf": "^3.0.1",
+    "jspdf-autotable": "^5.0.2",
+    "jwt-decode": "^4.0.0",
+    "leaflet": "^1.9.4",
+    "leaflet-control-geocoder": "^3.3.1",
+    "pell": "^1.0.6",
+    "process": "^0.11.10",
+    "xlsx": "^0.18.5"
+  }
+}

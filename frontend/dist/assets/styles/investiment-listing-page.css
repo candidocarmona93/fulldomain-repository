@@ -1,0 +1,220 @@
+.l-investiment-feed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    width: 100%;
+    max-width: 900px; /* Limits width for investiment reading experience */
+    margin: 0 auto;
+}
+
+.l-investiment-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 100%;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f1f5f9;
+    cursor: pointer;
+}
+
+.l-investiment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
+
+/* Big Image */
+.l-investiment-image-wrapper {
+    width: 100%;
+    height: 450px; /* Big vertical height */
+    position: relative;
+    overflow: hidden;
+}
+
+.l-investiment-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.l-investiment-card:hover .l-investiment-image {
+    transform: scale(1.05);
+}
+
+/* Badges on Image */
+.l-investiment-badges {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    display: flex;
+    gap: 10px;
+}
+
+.l-badge {
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.l-badge.primary {
+    background: white;
+    color: #0f172a;
+}
+
+.l-badge.emphasis {
+    background: #cca43b;
+    color: white;
+}
+
+/* Content Area */
+.l-investiment-content {
+    padding: 40px;
+}
+
+/* Meta Data */
+.l-investiment-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.l-meta-category {
+    font-weight: 700;
+    color: #cca43b;
+    text-transform: uppercase;
+}
+
+.l-meta-dot {
+    width: 4px;
+    height: 4px;
+    background: #cbd5e1;
+    border-radius: 50%;
+}
+
+.l-meta-icon {
+    color: #94a3b8;
+}
+
+.l-meta-text {
+    color: #64748b;
+}
+
+/* Typography */
+.l-investiment-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 25px;
+    line-height: 1.3;
+}
+
+.l-investiment-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.l-investiment-spec-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #475569;
+}
+
+.l-investiment-spec-icon {
+    font-size: 1.1rem;
+    color: #94a3b8;
+}
+
+.l-investiment-spec-text {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.l-divider {
+    height: 1px;
+    background: #e2e8f0;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+/* Footer */
+.l-investiment-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.l-price-label {
+    display: block;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin-bottom: 4px;
+}
+
+.l-investiment-price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: -0.5px;
+}
+
+.l-read-more-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    color: #2563eb;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background: #eff6ff;
+    transition: all 0.3s ease;
+}
+
+.l-read-more-btn:hover {
+    background: #2563eb;
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .l-header-title {
+        font-size: 2.2rem;
+    }
+    
+    .l-investiment-image-wrapper {
+        height: 300px;
+    }
+    
+    .l-investiment-content {
+        padding: 25px;
+    }
+    
+    .l-investiment-title {
+        font-size: 1.6rem;
+    }
+    
+    .l-investiment-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    
+    .l-read-more-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

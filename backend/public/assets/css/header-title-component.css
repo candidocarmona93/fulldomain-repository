@@ -1,0 +1,9 @@
+@import url("./root.css");
+
+.header-title-component {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    margin-top: 1rem;
+    line-height: 1.4;
+}

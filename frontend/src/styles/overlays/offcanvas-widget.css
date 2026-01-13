@@ -1,0 +1,8 @@
+.offcanvas-widget {
+    --offcanvas-width: 500px;
+
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    height: 100vh;
+    width: min(var(--offcanvas-width), 80%);
+}

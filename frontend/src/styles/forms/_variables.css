@@ -1,0 +1,19 @@
+@import url('../root.css');
+
+:root {
+  --input-bg-color: #ffffff;
+  --input-text-color: #2d3748;
+  --input-label-color: #a0aec0;
+  --input-hover-border-color: #cbd5e0;
+  --input-focus-color: #667eea;
+  --input-error-color: #e53e3e;
+  --input-error-shadow: #e53e3e26;
+
+  --select-bg-color: #ffffff;
+  --select-text-color: #2d3748;
+  --select-label-color: #a0aec0;
+  --select-hover-border-color: #cbd5e0;
+  --select-focus-color: #667eea;
+  --select-error-color: #e53e3e;
+  --select-error-shadow: #e53e3e26;
+}

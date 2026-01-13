@@ -1,0 +1,94 @@
+@import url("./root.css");
+
+.default-page-component {
+    display: flex;
+    min-height: 100dvh;
+    background-color: white;
+}
+
+.default-header-component {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    position: sticky;
+    width: 100%;
+    margin: 0 auto;
+    top: 10px;
+    z-index: 1000;
+    box-shadow: var(--box-shadow-medium);
+
+    .header-profile-component {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 8px 16px;
+        border-radius: var(--radius-full);
+        background: rgba(255, 255, 255, 0.1);
+        transition: var(--transition-default);
+        cursor: pointer;
+        margin-left: auto;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.02);
+        }
+
+        .profile-username-component {
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--color-surface);
+            letter-spacing: 0.025em;
+            line-height: 1;
+        }
+
+        .profile-role-component {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+            line-height: 1;
+        }
+
+        >i {
+            font-size: 16px;
+            color: var(--color-surface);
+            transition: var(--transition-default);
+        }
+
+        .profile-image-component {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-full);
+            overflow: hidden;
+            box-shadow: var(--box-shadow-small);
+            border: 2px solid var(--color-surface);
+            transition: var(--transition-default);
+
+            &:hover {
+                transform: scale(1.05);
+            }
+
+            >img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+.default-footer-component {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(255, 255, 255);
+    color: rgb(107, 114, 128);
+    font-size: 14px;
+    border-top: 1px solid rgb(249, 250, 251);
+    margin-top: auto;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px
+}

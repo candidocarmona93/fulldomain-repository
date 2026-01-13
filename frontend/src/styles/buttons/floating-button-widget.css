@@ -1,0 +1,109 @@
+/* floating-button-widget.css */
+@import url('../root.css');
+
+/* ===== SIZE MODIFIERS ===== */
+.floating-button-widget--xsmall {
+    width: 40px;
+    height: 40px;
+    font-size: 0.75rem;
+    border-radius: 20px;
+}
+
+.floating-button-widget--small {
+    width: 48px;
+    height: 48px;
+    font-size: 0.85rem;
+    border-radius: 24px;
+}
+
+.floating-button-widget--medium {
+    width: 56px;
+    height: 56px;
+    font-size: 1rem;
+    border-radius: 28px;
+}
+
+.floating-button-widget--large {
+    width: 64px;
+    height: 64px;
+    font-size: 1.125rem;
+    border-radius: 32px;
+}
+
+.floating-button-widget--xlarge {
+    width: 72px;
+    height: 72px;
+    font-size: 1.25rem;
+    border-radius: 36px;
+}
+
+/* ===== VARIANT MODIFIERS ===== */
+.floating-button-widget--primary {
+    --floating-bg: var(--primary);
+    --floating-text-color: var(--primary-text-color);
+    --floating-border-color: var(--primary-border-color);
+    --floating-hover-color: var(--primary-text-hover-color);
+    --floating-focus-color: var(--primary-focus-color);
+}
+
+.floating-button-widget--default {
+    --floating-bg: var(--default);
+    --floating-text-color: var(--default-text-color);
+    --floating-border-color: var(--default-border-color);
+    --floating-hover-color: var(--default-text-hover-color);
+    --floating-focus-color: var(--default-focus-color);
+}
+
+.floating-button-widget--secondary {
+    --floating-bg: var(--secondary);
+    --floating-text-color: var(--secondary-text-color);
+    --floating-border-color: var(--secondary-border-color);
+    --floating-hover-color: var(--secondary-text-hover-color);
+    --floating-focus-color: var(--secondary-focus-color);
+}
+
+.floating-button-widget--danger {
+    --floating-bg: var(--danger);
+    --floating-text-color: var(--danger-text-color);
+    --floating-border-color: var(--danger-border-color);
+    --floating-hover-color: var(--danger-text-hover-color);
+    --floating-focus-color: var(--danger-focus-color);
+}
+
+/* ===== BASE COMPONENT ===== */
+.floating-button-widget {
+    position: fixed;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--floating-bg);
+    color: var(--floating-text-color);
+    border: 1px solid var(--floating-border-color);
+    box-shadow: 0 4px 12px var(--shadow-color-15);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    
+    /* ===== STATES ===== */
+    &:hover {
+        transform: translateY(-2px) scale(1.05);
+        box-shadow: 0 6px 20px var(--shadow-color-20);
+    }
+
+    &:active {
+        transform: translateY(0) scale(0.95);
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px var(--floating-focus-color);
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+        box-shadow: 0 2px 6px var(--shadow-color-10);
+    }
+}

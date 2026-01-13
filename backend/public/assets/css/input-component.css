@@ -1,0 +1,25 @@
+.input-component,
+.select-component {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    transition: all 0.3s ease !important;
+    height: 70px;
+
+    &::placeholder,
+    &::-webkit-input-placeholder {
+        color: #a0aec0;
+    }
+
+    i {
+        font-size: 1.2rem;
+    }
+
+    &[type="password"]~i {
+        cursor: pointer;
+        color: #a0aec0;
+
+        &:hover {
+            color: #4a5568
+        }
+    }
+}

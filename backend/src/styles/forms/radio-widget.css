@@ -1,0 +1,114 @@
+@import "./_variables.css";
+
+/* SIZE MODIFIERS - Adjusts the custom dot and container */
+.radio-widget--xsmall { --radio-size: 14px; --dot-size: 6px; font-size: 0.75rem; }
+.radio-widget--small  { --radio-size: 16px; --dot-size: 8px; font-size: 0.85rem; }
+.radio-widget--medium { --radio-size: 20px; --dot-size: 10px; font-size: 0.9rem; }
+.radio-widget--large  { --radio-size: 24px; --dot-size: 12px; font-size: 1rem; }
+.radio-widget--xlarge { --radio-size: 28px; --dot-size: 14px; font-size: 1.125rem; }
+
+/* VARIANT MODIFIERS */
+.radio-widget--primary   { --radio-color: var(--primary); }
+.radio-widget--secondary { --radio-color: var(--secondary); }
+.radio-widget--success   { --radio-color: var(--success); }
+.radio-widget--danger    { --radio-color: var(--danger); }
+.radio-widget--warning   { --radio-color: var(--warning); }
+.radio-widget--info      { --radio-color: var(--info); }
+
+/* CONTAINERS */
+.radio-outter-container-widget {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.radio-container-widget {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    transition: all 0.2s ease;
+    color: var(--radio-text-color, #374151);
+}
+
+/* CUSTOM RADIO STYLING */
+.radio-input-widget {
+    /* Hide default radio but keep it accessible */
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #fff;
+    margin: 0;
+    font: inherit;
+    width: var(--radio-size, 20px);
+    height: var(--radio-size, 20px);
+    border: 2px solid #d1d5db;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+/* The inner dot */
+.radio-input-widget::before {
+    content: "";
+    width: var(--dot-size, 10px);
+    height: var(--dot-size, 10px);
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 0.2s transform cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #fff;
+    box-shadow: inset 1em 1em var(--radio-color, #2563eb);
+}
+
+/* Checked State */
+.radio-input-widget:checked {
+    border-color: var(--radio-color, #2563eb);
+    background-color: #fff;
+}
+
+.radio-input-widget:checked::before {
+    transform: scale(1);
+}
+
+/* Hover & Focus Effects */
+.radio-container-widget:hover .radio-input-widget {
+    border-color: var(--radio-color, #2563eb);
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+}
+
+.radio-input-widget:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px var(--radio-focus-color, rgba(37, 99, 235, 0.2));
+}
+
+/* Label Positions */
+.radio-label-right  { flex-direction: row; gap: 10px; }
+.radio-label-left   { flex-direction: row-reverse; justify-content: flex-end; gap: 10px; }
+.radio-label-top    { flex-direction: column-reverse; align-items: flex-start; gap: 4px; }
+.radio-label-bottom { flex-direction: column; align-items: flex-start; gap: 4px; }
+
+/* Disabled State */
+.radio-input-widget:disabled {
+    background-color: #f3f4f6;
+    border-color: #e5e7eb;
+    cursor: not-allowed;
+}
+
+.radio-input-widget:disabled::before {
+    box-shadow: inset 1em 1em #9ca3af;
+}
+
+/* Error State */
+.radio-invalid-state-widget .radio-input-widget {
+    border-color: var(--error, #ef4444);
+}
+
+.radio-error-message-widget {
+    color: var(--error, #ef4444);
+    font-size: 0.85rem;
+    margin-top: 4px;
+    font-weight: 500;
+}

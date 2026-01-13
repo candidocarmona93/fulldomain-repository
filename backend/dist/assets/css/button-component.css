@@ -1,0 +1,14 @@
+.button-component {
+    padding: 1rem;
+    border-radius: 0.75rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+    justify-content: center;    
+    height: 70px;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+    }
+}

@@ -1,0 +1,10 @@
+.grid-widget {
+    --columns: auto-fit;
+    --minmax: 1fr;
+    --gap: 1rem;
+
+    display: grid;
+    grid-template-columns: repeat(var(--columns), minmax(var(--minmax), 1fr));
+    gap: var(--gap);
+    margin-bottom: 2rem;
+}

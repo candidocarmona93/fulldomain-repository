@@ -1,0 +1,181 @@
+/* ExpansionTile.css - Enhanced Version */
+
+/* Define theme variables for easy customization */
+:root {
+    /* New variables for the enhanced design */
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 10px rgba(0,0,0,0.1);
+    --transition-speed: 0.3s;
+    --transition-easing: cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.expansion-tile-container {
+    border-radius: 12px; /* Slightly larger radius for a softer look */
+    overflow: hidden;
+    margin-bottom: 1rem; /* More spacing between tiles */
+    background-color: var(--background);
+    box-shadow: var(--shadow-sm);
+    /* Transition the shadow for a smooth lift effect */
+    transition: box-shadow var(--transition-speed) var(--transition-easing),
+                transform var(--transition-speed) var(--transition-easing);
+}
+
+/* Add a subtle lift effect when hovering over an active tile */
+.expansion-tile-container:has(.expansion-tile-header:hover:not(.disabled)) {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.expansion-tile-header {
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-height: 60px;
+    position: relative;
+    background-color: transparent;
+    border-bottom: 1px solid var(--border-color); /* Separator line */
+    /* Transition properties individually for better control */
+    transition: background-color var(--transition-speed) var(--transition-easing);
+}
+
+/* Remove the bottom border when the tile is expanded */
+.expansion-tile-header.expanded {
+    border-bottom: none;
+    background-color: var(--primary-light); /* Keep it highlighted when open */
+}
+
+/* Use :focus-visible for accessibility on keyboard navigation */
+.expansion-tile-header:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.expansion-tile-header:hover:not(.disabled) {
+    background-color: var(--primary-light);
+}
+
+.expansion-tile-header.disabled {
+    cursor: default;
+    background-color: var(--background);
+}
+
+.expansion-tile-title {
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 0;
+    color: var(--text);
+    flex-grow: 1;
+    transition: color var(--transition-speed) var(--transition-easing);
+}
+
+/* Change title color when expanded or hovered */
+.expansion-tile-header.expanded .expansion-tile-title,
+.expansion-tile-header:hover:not(.disabled) .expansion-tile-title {
+    color: var(--primary-dark);
+}
+
+.expansion-tile-header.disabled .expansion-tile-title {
+    color: var(--disabled);
+}
+
+.expansion-tile-subtitle {
+    font-size: 0.875rem; /* Slightly larger for readability */
+    margin: 0.125rem 0 0 0;
+    line-height: 1.4;
+    color: var(--text-secondary);
+    transition: color var(--transition-speed) var(--transition-easing);
+}
+
+.expansion-tile-header:hover:not(.disabled) .expansion-tile-subtitle {
+    color: var(--primary);
+}
+
+.expansion-tile-header.disabled .expansion-tile-subtitle {
+    color: var(--disabled);
+}
+
+.expansion-tile-icon {
+    font-size: 1.25rem;
+    color: var(--primary);
+    transition: color var(--transition-speed) var(--transition-easing);
+}
+
+/* Change icon color when expanded or hovered */
+.expansion-tile-header.expanded .expansion-tile-icon,
+.expansion-tile-header:hover:not(.disabled) .expansion-tile-icon {
+    color: var(--primary-dark);
+}
+
+.expansion-tile-header.disabled .expansion-tile-icon {
+    color: var(--disabled);
+}
+
+.expansion-tile-chevron {
+    font-size: 1.2rem;
+    color: var(--primary);
+    transition: transform var(--transition-speed) var(--transition-easing),
+                color var(--transition-speed) var(--transition-easing);
+}
+
+/* Change chevron color when expanded or hovered */
+.expansion-tile-header.expanded .expansion-tile-chevron,
+.expansion-tile-header:hover:not(.disabled) .expansion-tile-chevron {
+    color: var(--primary-dark);
+}
+
+.expansion-tile-header.disabled .expansion-tile-chevron {
+    color: var(--disabled);
+}
+
+.expansion-tile-chevron.expanded {
+    transform: rotate(180deg);
+}
+
+.expansion-tile-body {
+    padding: 0.5rem 1.25rem 1.25rem 1.25rem; /* Adjust padding for seamless feel */
+    background-color: var(--primary-light); /* Match the header's active state */
+    /* Use the new animation */
+    animation: slideDownFadeIn var(--transition-speed) var(--transition-easing);
+}
+
+.expansion-tile-action-bar {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.expansion-tile-action-button {
+    font-size: 0.85rem;
+    font-weight: 600; /* Bolder for clarity */
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px; /* Match container's softness */
+    background-color: transparent;
+    color: var(--primary-dark);
+    border: 1px solid transparent;
+    transition: all var(--transition-speed) var(--transition-easing);
+}
+
+.expansion-tile-action-button:hover {
+    background-color: var(--primary);
+    color: var(--white);
+    border-color: var(--primary-dark);
+}
+
+
+/* A smoother, more natural animation for the body */
+@keyframes slideDownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

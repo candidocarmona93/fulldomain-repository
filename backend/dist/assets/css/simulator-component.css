@@ -1,0 +1,21 @@
+.input-simulator-component{
+    padding-left: 4.5rem!important;
+}
+
+.prefix-label-component {
+    color: #555;
+    text-align: center;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 3.8rem;
+    height: 80%;
+    padding: 6px;
+    left: 5px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}

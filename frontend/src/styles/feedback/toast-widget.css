@@ -1,0 +1,117 @@
+@import url('../root.css');
+
+:root {
+  /* Shadow variables */
+  --shadow-color: #000000;
+  --shadow-color-10: #0000001a;
+  --shadow-color-15: #00000026;
+
+  /* Toast-specific variables */
+  --toast-progress-bar-bg-color: #ffffff66;
+  --toast-icon-close-color: #ffffffb3;
+  --toast-transition-duration: 400ms; /* Matches JS animation */
+  --toast-offset: 10px;
+  --toast-z-index: 9999;
+  --toast-border-width: 5px;
+}
+
+/* Theme-specific variables for Toast */
+.toast-widget--info {
+  --toast-bg: var(--info, #e6f3ff) !important;
+  --toast-text-color: var(--info-text-color, #0052cc) !important;
+  --toast-border-color: var(--info-border-color, #b3d4ff) !important;
+  --toast-hover-color: var(--info-text-hover-color, #003d99) !important;
+  --toast-focus-color: var(--info-focus-color, #80b3ff) !important;
+  --toast-icon: var(--info-icon);
+}
+
+.toast-widget--success {
+  --toast-bg: var(--success, #e6ffed) !important;
+  --toast-text-color: var(--success-text-color, #006644) !important;
+  --toast-border-color: var(--success-border-color, #b3ffd1) !important;
+  --toast-hover-color: var(--success-text-hover-color, #004d33) !important;
+  --toast-focus-color: var(--success-focus-color, #80ffad) !important;
+  --toast-icon: var(--success-icon);
+}
+
+.toast-widget--warning {
+  --toast-bg: var(--warning, #fff8e6) !important;
+  --toast-text-color: var(--warning-text-color, #664d00) !important;
+  --toast-border-color: var(--warning-border-color, #ffe8b3) !important;
+  --toast-hover-color: var(--warning-text-hover-color, #4d3a00) !important;
+  --toast-focus-color: var(--warning-focus-color, #ffd966) !important;
+  --toast-icon: var(--warning-icon);
+}
+
+.toast-widget--error {
+  --toast-bg: var(--error, #ffe6e6) !important;
+  --toast-text-color: var(--error-text-color, #cc0000) !important;
+  --toast-border-color: var(--error-border-color, #ffb3b3) !important;
+  --toast-hover-color: var(--error-text-hover-color, #990000) !important;
+  --toast-focus-color: var(--error-focus-color, #ff8080) !important;
+  --toast-icon: var(--error-icon);
+}
+
+.toast-container-widget {
+    position: fixed;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast-widget {
+    font-family: inherit;
+    padding: 14px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--toast-text-color);
+    min-width: 300px;
+    max-width: 350px;
+    box-shadow: 0px 4px 8px var(--shadow-color-10);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    background: var(--toast-bg);
+    /* Corrected: Removed trailing comma from the border-left declaration */
+    border-left: 5px solid var(--toast-border-color); 
+}
+
+.toast-progress-bar-widget {
+    font-family: inherit;
+    height: 3px;
+    width: 100%;
+    background-color: var(--toast-progress-bar-bg-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.toast-icon-widget {
+    font-family: inherit;
+    background-image: var(--toast-icon);
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.toast-close-icon-widget {
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: auto;
+    opacity: 0.6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease;
+    will-change: opacity;
+}

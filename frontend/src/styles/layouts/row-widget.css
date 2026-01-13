@@ -1,0 +1,236 @@
+/* row-widget.css - Smart Nesting Support */
+@import url('../root.css');
+
+:root {
+    --container-max-width: 1400px;
+    --gutter-x: 15px;
+}
+
+/* ===== SIZE MODIFIERS ===== */
+.row-container-widget--xsmall {
+    max-width: 540px;
+}
+
+.row-container-widget--small {
+    max-width: 720px;
+}
+
+.row-container-widget--medium {
+    max-width: 960px;
+}
+
+.row-container-widget--large {
+    max-width: 1140px;
+}
+
+.row-container-widget--xlarge {
+    max-width: 1320px;
+}
+
+.row-container-widget--fluid {
+    max-width: 100%;
+}
+
+/* ===== BASE COMPONENTS ===== */
+.row-container-widget {
+    max-width: var(--container-max-width, 1200px);
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* MAIN ROW - Only top-level rows in containers have negative margins */
+.row-container-widget>.row-widget,
+.row-container-widget--spaced>.row-widget {
+    display: flex;
+    flex-wrap: wrap;
+    /* Negative margins ONLY for top-level rows */
+    margin-left: calc(var(--gutter-x, 15px) * -0.5);
+    margin-right: calc(var(--gutter-x, 15px) * -0.5);
+    box-sizing: border-box;
+}
+
+/* NESTED ROW - Any row inside another row-widget loses negative margins */
+.row-widget .row-widget {
+    display: flex;
+    flex-wrap: wrap;
+    /* Nested rows: NO negative margins */
+    margin-left: 0;
+    margin-right: 0;
+    /* Nested rows act as regular flex containers */
+    width: 100%;
+}
+
+/* Column inside nested row should have normal padding */
+.row-widget .row-widget>[class*="col-"],
+.row-widget .row-widget>[class*="col-sm-"],
+.row-widget .row-widget>[class*="col-md-"],
+.row-widget .row-widget>[class*="col-lg-"],
+.row-widget .row-widget>[class*="col-xl-"] {
+    padding-left: calc(var(--gutter-x, 15px) * 0.5);
+    padding-right: calc(var(--gutter-x, 15px) * 0.5);
+}
+
+/* Utility for when you DO want container spacing */
+.row-container-widget--spaced {
+    padding-left: var(--gutter-x, 15px);
+    padding-right: var(--gutter-x, 15px);
+}
+
+/* When container is spaced, adjust row margins */
+.row-container-widget--spaced>.row-widget {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* ===== ROW VARIATIONS ===== */
+.row-widget--no-gutters,
+.row-widget--no-gutters .row-widget {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.row-widget--no-gutters>[class*="col-"],
+.row-widget--no-gutters>[class*="col-sm-"],
+.row-widget--no-gutters>[class*="col-md-"],
+.row-widget--no-gutters>[class*="col-lg-"],
+.row-widget--no-gutters>[class*="col-xl-"],
+.row-widget--no-gutters .row-widget>[class*="col-"],
+.row-widget--no-gutters .row-widget>[class*="col-sm-"],
+.row-widget--no-gutters .row-widget>[class*="col-md-"],
+.row-widget--no-gutters .row-widget>[class*="col-lg-"],
+.row-widget--no-gutters .row-widget>[class*="col-xl-"] {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.row-widget--align-center {
+    align-items: center;
+}
+
+.row-widget--align-start {
+    align-items: flex-start;
+}
+
+.row-widget--align-end {
+    align-items: flex-end;
+}
+
+.row-widget--align-stretch {
+    align-items: stretch;
+}
+
+.row-widget--align-baseline {
+    align-items: baseline;
+}
+
+.row-widget--justify-center {
+    justify-content: center;
+}
+
+.row-widget--justify-start {
+    justify-content: flex-start;
+}
+
+.row-widget--justify-end {
+    justify-content: flex-end;
+}
+
+.row-widget--justify-between {
+    justify-content: space-between;
+}
+
+.row-widget--justify-around {
+    justify-content: space-around;
+}
+
+.row-widget--justify-evenly {
+    justify-content: space-evenly;
+}
+
+.row-widget--reverse {
+    flex-direction: row-reverse;
+}
+
+.row-widget--nowrap {
+    flex-wrap: nowrap;
+}
+
+.row-widget--wrap {
+    flex-wrap: wrap;
+}
+
+.row-widget--wrap-reverse {
+    flex-wrap: wrap-reverse;
+}
+
+/* Gutter size variations */
+.row-widget--gutter-sm {
+    --gutter-x: 10px;
+}
+
+.row-widget--gutter-md {
+    --gutter-x: 15px;
+}
+
+.row-widget--gutter-lg {
+    --gutter-x: 30px;
+}
+
+.row-widget--gutter-none {
+    --gutter-x: 0px;
+}
+
+/* Density utilities */
+.row-widget--dense {
+    margin-left: calc(var(--gutter-x) * -0.25);
+    margin-right: calc(var(--gutter-x) * -0.25);
+}
+
+.row-widget--dense>[class*="col-"],
+.row-widget--dense>[class*="col-sm-"],
+.row-widget--dense>[class*="col-md-"],
+.row-widget--dense>[class*="col-lg-"],
+.row-widget--dense>[class*="col-xl-"] {
+    padding-left: calc(var(--gutter-x) * 0.25);
+    padding-right: calc(var(--gutter-x) * 0.25);
+}
+
+/* For nested rows in dense mode */
+.row-widget--dense .row-widget {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.row-widget--dense .row-widget>[class*="col-"],
+.row-widget--dense .row-widget>[class*="col-sm-"],
+.row-widget--dense .row-widget>[class*="col-md-"],
+.row-widget--dense .row-widget>[class*="col-lg-"],
+.row-widget--dense .row-widget>[class*="col-xl-"] {
+    padding-left: calc(var(--gutter-x) * 0.25);
+    padding-right: calc(var(--gutter-x) * 0.25);
+}
+
+/* Responsive gutter adjustments */
+@media (max-width: 575.98px) {
+    .row-widget--gutter-xs-mobile {
+        --gutter-x: 10px;
+    }
+}
+
+@media (min-width: 576px) {
+    .row-widget--gutter-sm-tablet {
+        --gutter-x: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .row-widget--gutter-md-desktop {
+        --gutter-x: 25px;
+    }
+}
+
+/* Ensure all column children inherit proper spacing */
+.row-widget>* {
+    box-sizing: border-box;
+}

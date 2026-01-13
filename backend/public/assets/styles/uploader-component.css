@@ -1,0 +1,232 @@
+.gallery-container {
+    width: 100%;
+}
+
+.gallery-header {
+    border-bottom: 1px solid #e5e7eb;
+    width: 100%;
+}
+
+.gallery-subtitle {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 0;
+}
+
+.gallery-content {
+    width: 100%;
+}
+
+/* --- Feedback Area --- */
+.feedback-area {
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 8px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.feedback-area.error {
+    background: #fee2e2;
+    border: 1px solid #fca5a5;
+    color: #b91c1c;
+}
+
+.feedback-area.success {
+    background: #dcfce7;
+    border: 1px solid #86efac;
+    color: #166534;
+}
+
+.feedback-area.info {
+    background: #e0e7ff;
+    border: 1px solid #a5b4fc;
+    color: #3730a3;
+}
+
+.feedback-close-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 0 4px;
+    color: inherit;
+    opacity: 0.7;
+}
+.feedback-close-btn:hover {
+    opacity: 1;
+}
+
+/* --- Uploader Area --- */
+.gallery-upload-area {
+    border: 2px dashed #5c6ac4;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem; /* Removed fixed height, use padding */
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.gallery-upload-area:hover,
+.gallery-upload-area.dragover {
+    border-color: #0f001f;
+    background: rgba(248, 250, 255, 0.9);
+}
+
+/* --- Main Image & Gallery Grid --- */
+.main-image-container {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: #f8fafc;
+    aspect-ratio: 1/1; /* Main change: use aspect ratio, not fixed height */
+    border: 2px dashed #e5e7eb;
+    width: 100%;
+    position: relative; /* For the label */
+}
+
+.main-image-container.has-image {
+    border: none;
+}
+
+.gallery-main-image-placeholder {
+    text-align: center;
+    padding: 20px;
+    color: #6b7280;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Fills the aspect-ratio container */
+}
+
+.main-image-label {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #5c6ac4;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+    z-index: 10;
+}
+
+/* New container for scrolling gallery */
+.gallery-view-container {
+    max-height: 25rem; /* Matches a reasonable height */
+    overflow-y: auto;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 8px;
+    background: #fdfdff;
+}
+
+.gallery-image {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery-image:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-image.selected {
+    border-color: #5c6ac4;
+    box-shadow: none; /* Simplified selection state */
+}
+
+.gallery-image-actions {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    display: flex;
+    gap: 4px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.gallery-image:hover .gallery-image-actions {
+    opacity: 1;
+}
+
+.gallery-image-btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px; /* Larger 'x' */
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* Removed .set-main-btn */
+
+.remove-btn {
+    background: rgba(107, 114, 128, 0.8); /* Gray by default */
+    color: white;
+    transition: background-color 0.2s ease;
+}
+
+.remove-btn:hover {
+    background: #ef4444; /* Red on hover */
+}
+
+/* --- Action Buttons --- */
+.gallery-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 16px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #5c6ac4;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #4a59b3;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #6b7280;
+    border: 1px solid #e5e7eb;
+}
+
+.btn-secondary:hover {
+    background: rgba(0, 0, 0, 0.03);
+    color: #1a1d2e;
+}

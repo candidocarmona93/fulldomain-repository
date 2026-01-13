@@ -1,0 +1,147 @@
+:root {
+  --gallery-primary: #007bff;
+  --gallery-primary-dark: #0062cc;
+  --gallery-bg: #ffffff;
+  --gallery-card-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  --gallery-hover-shadow: 0 20px 40px rgba(0,0,0,0.22);
+}
+
+.gallery-upload-wrapper {
+  width: 100%;
+  line-height: 1.5;
+}
+
+/* ==================== IMAGE CARDS ==================== */
+.gallery-image-card {
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  box-shadow: var(--gallery-card-shadow);
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  aspect-ratio: 1/1;
+}
+
+.gallery-image-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: var(--gallery-hover-shadow);
+  z-index: 10;
+}
+
+.gallery-image-card.main-image {
+  outline: 4px solid var(--gallery-primary);
+  outline-offset: -4px;
+  animation: pulse-main 2s infinite;
+}
+
+@keyframes pulse-main {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7); }
+  50%      { box-shadow: 0 0 0 12px rgba(0, 123, 255, 0); }
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  display: block;
+  background: linear-gradient(135deg, #111 0%, #222 100%);
+  transition: transform 0.3s ease;
+}
+
+.gallery-image-card:hover .gallery-image {
+  transform: scale(1.05);
+}
+
+/* ==================== OVERLAYS (upload progress & error) ==================== */
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 10;
+  border-radius: 12px;
+}
+
+.gallery-upload-overlay {
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+}
+
+.gallery-error-overlay {
+  background: rgba(220, 53, 69, 0.95);
+  color: white;
+  font-weight: 500;
+}
+
+/* ==================== MAIN BADGE (on cards only) ==================== */
+.gallery-main-badge .badge {
+  background: linear-gradient(135deg, var(--gallery-primary) 0%, var(--gallery-primary-dark) 100%) !important;
+  color: white !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  padding: 6px 12px !important;
+  border-radius: 20px !important;
+  box-shadow: 0 4px 16px rgba(0,123,255,0.4) !important;
+  animation: badge-glow 2s infinite !important;
+}
+
+@keyframes badge-glow {
+  0%, 100% { box-shadow: 0 4px 16px rgba(0,123,255,0.4); }
+  50%      { box-shadow: 0 4px 24px rgba(0,123,255,0.6); }
+}
+
+/* ==================== UPLOAD BUTTON ==================== */
+.gallery-upload-button {
+  height: 64px;
+  font-size: 17px;
+  font-weight: 600;
+  width: 100%;
+  max-width: 420px;
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--gallery-primary) 0%, var(--gallery-primary-dark) 100%);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
+  margin: 0 auto;
+}
+
+.gallery-upload-button:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(0, 123, 255, 0.4);
+}
+
+.gallery-upload-button:disabled {
+  background: #6c757d;
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+  .gallery-upload-container .row-builder {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 6px;
+  }
+
+  .gallery-upload-button {
+    height: 56px;
+    font-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root { --gallery-bg: #0a0a0a; }
+  .gallery-image-card { background: #111; }
+}

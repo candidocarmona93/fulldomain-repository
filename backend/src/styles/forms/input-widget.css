@@ -1,0 +1,245 @@
+@import "./_variables.css";
+
+/* SIZE MODIFIERS */
+.input-widget--xsmall {
+    padding: 4px 8px;
+    font-size: .75rem;
+    border-radius: .25rem;
+    height: 2rem;
+}
+
+.input-widget--small {
+    padding: 6px 12px;
+    font-size: .85rem;
+    border-radius: .375rem;
+    height: 2.25rem;
+}
+
+.input-widget--medium {
+    padding: 8px 16px;
+    font-size: .9rem;
+    border-radius: .5rem;
+    height: 2.5rem;
+}
+
+.input-widget--large {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: .625rem;
+    height: 2.75rem;
+}
+
+.input-widget--xlarge {
+    padding: 12px 24px;
+    font-size: 1.125rem;
+    border-radius: .75rem;
+    height: 3rem;
+}
+
+/* VARIANT MODIFIERS */
+.input-widget--primary {
+    --input-bg: var(--primary);
+    --input-text-color: var(--primary-text-color);
+    --input-border-color: var(--primary-border-color);
+    --input-hover-color: var(--primary-text-hover-color);
+    --input-focus-color: var(--primary-focus-color);
+    --input-label-color: var(--primary-text-color)
+}
+
+.input-widget--default {
+    --input-bg: var(--basic);
+    --input-text-color: var(--basic-text-color);
+    --input-border-color: var(--basic-border-color);
+    --input-hover-color: var(--basic-text-hover-color);
+    --input-focus-color: var(--basic-focus-color);
+    --input-label-color: var(--basic-text-color)
+}
+
+.input-widget--secondary {
+    --input-bg: var(--secondary);
+    --input-text-color: var(--secondary-text-color);
+    --input-border-color: var(--secondary-border-color);
+    --input-hover-color: var(--secondary-text-hover-color);
+    --input-focus-color: var(--secondary-focus-color);
+    --input-label-color: var(--secondary-text-color)
+}
+
+.input-widget--danger {
+    --input-bg: var(--danger);
+    --input-text-color: var(--danger-text-color);
+    --input-border-color: var(--danger-border-color);
+    --input-hover-color: var(--danger-text-hover-color);
+    --input-focus-color: var(--danger-focus-color);
+    --input-label-color: var(--danger-text-color)
+}
+
+.input-widget--info {
+    --input-bg: var(--info);
+    --input-text-color: var(--info-text-color);
+    --input-border-color: var(--info-border-color);
+    --input-hover-color: var(--info-text-hover-color);
+    --input-focus-color: var(--info-focus-color);
+    --input-label-color: var(--info-text-color)
+}
+
+.input-widget--warning {
+    --input-bg: var(--warning);
+    --input-text-color: var(--warning-text-color);
+    --input-border-color: var(--warning-border-color);
+    --input-hover-color: var(--warning-text-hover-color);
+    --input-focus-color: var(--warning-focus-color);
+    --input-label-color: var(--warning-text-color)
+}
+
+.input-widget--success {
+    --input-bg: var(--success);
+    --input-text-color: var(--success-text-color);
+    --input-border-color: var(--success-border-color);
+    --input-hover-color: var(--success-text-hover-color);
+    --input-focus-color: var(--success-focus-color);
+    --input-label-color: var(--success-text-color)
+}
+
+.input-widget--error {
+    --input-bg: var(--error);
+    --input-text-color: var(--error-text-color);
+    --input-border-color: var(--error-border-color);
+    --input-hover-color: var(--error-text-hover-color);
+    --input-focus-color: var(--error-focus-color);
+    --input-label-color: var(--error-text-color)
+}
+
+/* CONTAINERS */
+.input-outter-container-widget {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: var(--gap, 8px);
+}
+
+.input-inner-container-widget {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: var(--gap, 8px);
+}
+
+.input-inner-container-widget i {
+    color: var(--input-text-color);
+    transition: color .3s ease;
+}
+
+/* LABEL */
+.input-label-widget {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all .3s cubic-bezier(.4, 0, .2, 1);
+    color: var(--input-label-color);
+    padding: 0 4px;
+    z-index: 1;
+    pointer-events: none;
+    background: var(--input-bg, var(--input-bg-color));
+    font-size: .9rem;
+}
+
+.input-label-floating-widget {
+    top: 0;
+    font-size: .75rem;
+    background-color: transparent;
+    transform: translateY(-50%) scale(.9);
+}
+
+/* INPUT BASE */
+.input-widget {
+    display: block;
+    width: 100%;
+    line-height: 1.5;
+    color: var(--input-text-color);
+    background: var(--input-bg, var(--input-bg-color));
+    border: 1px solid var(--input-border-color);
+    outline: none;
+    transition: all .3s cubic-bezier(.4, 0, .2, 1);
+    box-shadow: 0 1px 3px var(--shadow-color-10);
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.input-widget::placeholder {
+    color: var(--input-text-color);
+    opacity: .6;
+}
+
+.input-widget:hover {
+    border-color: var(--input-hover-border-color);
+    box-shadow: 0 2px 6px var(--shadow-color-15);
+    transform: translateY(-1px);
+}
+
+.input-widget:focus {
+    border-color: var(--input-focus-color);
+    box-shadow: 0 0 0 3px var(--input-focus-color);
+    transform: scale(1.005);
+}
+
+.input-widget:disabled {
+    background-color: #f7fafc;
+    opacity: .7;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.input-invalid-state-widget {
+    border-color: var(--input-error-color);
+    box-shadow: 0 0 0 3px var(--input-error-shadow);
+}
+
+/* ERROR */
+.input-error-message-widget {
+    color: var(--input-error-color);
+    font-size: .75rem;
+    margin-top: 4px;
+    display: none;
+    width: 100%;
+    text-align: left;
+    font-weight: 500;
+}
+
+.input-error-message-widget.show {
+    display: block;
+    animation: slideDownFadeIn .3s ease;
+}
+
+@keyframes slideDownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+    .input-widget,
+    .input-container-widget,
+    .input-label-widget,
+    .input-error-message-widget {
+        transition: none;
+    }
+    @keyframes slideDownFadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+}

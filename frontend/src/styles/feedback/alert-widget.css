@@ -1,0 +1,91 @@
+@import url('../root.css');
+
+:root {
+    --shadow-color: #000000;
+    --shadow-color-10: #0000001a;
+    --shadow-color-15: #00000026;
+
+    --alert-icon-close-color: #ffffffb3;
+}
+
+.alert-widget--info {
+    --alert-bg: var(--info);
+    --alert-text-color: var(--info-text-color);
+    --alert-border-color: var(--info-border-color);
+    --alert-hover-color: var(--info-text-hover-color);
+    --alert-focus-color: var(--info-focus-color);
+    --alert-icon: var(--info-icon);
+}
+
+.alert-widget--warning {
+    --alert-bg: var(--warning);
+    --alert-text-color: var(--warning-text-color);
+    --alert-border-color: var(--warning-border-color);
+    --alert-hover-color: var(--warning-text-hover-color);
+    --alert-focus-color: var(--warning-focus-color);
+    --alert-icon: var(--warning-icon);
+}
+
+.alert-widget--success {
+    --alert-bg: var(--success);
+    --alert-text-color: var(--success-text-color);
+    --alert-border-color: var(--success-border-color);
+    --alert-hover-color: var(--success-text-hover-color);
+    --alert-focus-color: var(--success-focus-color);
+    --alert-icon: var(--success-icon);
+}
+
+.alert-widget--error {
+    --alert-bg: var(--error);
+    --alert-text-color: var(--error-text-color);
+    --alert-border-color: var(--error-border-color);
+    --alert-hover-color: var(--error-text-hover-color);
+    --alert-focus-color: var(--error-focus-color);
+    --alert-icon: var(--error-icon);
+}
+
+.alert-widget {
+    background: var(--alert-bg);
+    color: var(--alert-text-color);
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow-color-10);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    gap: 12px;
+    position: relative;
+    width: 100%;
+}
+
+.alert-close-icon-widget {
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: auto;
+    opacity: 0.6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease;
+    will-change: opacity;
+}
+
+.alert-close-icon-widget svg {
+    fill: #fff;
+}
+
+.alert-close-icon-widget:hover {
+    opacity: 1;
+}
+
+.alert-icon-widget {
+    font-family: inherit;
+    background-image: var(--alert-icon);
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+}

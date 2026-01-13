@@ -1,0 +1,26 @@
+:root {
+    --bg-primary: #0068d8;
+    --bg-secondary: #6366F1;
+    --bg-accent: #10B981;
+    --bg-success: #22C55E;
+    --bg-warning: #F59E0B;
+    --bg-error: #EF4444;
+    --text-color-primary: #1F2937;
+    --text-color-secondary: #6B7280;
+    --color-background: #F9FAFB;
+    --color-surface: #FFFFFF;
+    --color-surface-elevated: #F8FAFC;
+
+    --box-shadow-small: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --box-shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --box-shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --box-shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+
+    --radius-small: 8px;
+    --radius-medium: 12px;
+    --radius-large: 16px;
+    --radius-full: 9999px;
+
+    --transition-default: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}

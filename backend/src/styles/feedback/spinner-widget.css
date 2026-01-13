@@ -1,0 +1,57 @@
+  /* Spinner Widget: Optimized with pseudo-element and better gradient */
+  .spinner-widget {
+      --spinner-border-width: 2px;
+      --spinner-inner-radius: calc(100% - var(--spinner-border-width));
+
+      width: var(--spinner-width);
+      height: var(--spinner-height);
+      position: relative;
+      border-radius: 50%;
+      mask: radial-gradient(farthest-side,
+              transparent var(--spinner-inner-radius),
+              #000 var(--spinner-inner-radius));
+      -webkit-mask: radial-gradient(farthest-side,
+              transparent var(--spinner-inner-radius),
+              #000 var(--spinner-inner-radius));
+  }
+
+  .spinner-widget::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: conic-gradient(from 90deg,
+              transparent 0%,
+              var(--spinner-color) 80%,
+              transparent 100%);
+      animation: quantum-spin var(--spinner-speed) linear infinite;
+      will-change: transform;
+  }
+
+  /* Keyframe optimizations */
+  @keyframes quantum-spin {
+      to {
+          transform: rotate(360deg);
+      }
+  }
+
+  /* Optional: Holographic effect as separate modifier */
+  .spinner-widget.holographic::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: linear-gradient(45deg,
+              transparent 25%,
+              rgba(255, 255, 255, 0.15) 50%,
+              transparent 75%);
+      background-size: 200% 200%;
+      animation: holographic-shimmer 1.5s linear infinite;
+      mix-blend-mode: overlay;
+  }
+
+  @keyframes holographic-shimmer {
+      to {
+          background-position: 200% 0;
+      }
+  }

@@ -1,0 +1,226 @@
+@import "./_variables.css";
+
+/* SIZE MODIFIERS */
+.text-area-widget--xsmall {
+    padding: 4px 8px;
+    font-size: .75rem;
+    border-radius: .25rem;
+    min-height: 4rem;
+}
+
+.text-area-widget--small {
+    padding: 6px 12px;
+    font-size: .85rem;
+    border-radius: .375rem;
+    min-height: 6rem;
+}
+
+.text-area-widget--medium {
+    padding: 8px 16px;
+    font-size: .9rem;
+    border-radius: .5rem;
+    min-height: 8rem;
+}
+
+.text-area-widget--large {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: .625rem;
+    min-height: 10rem;
+}
+
+.text-area-widget--xlarge {
+    padding: 12px 24px;
+    font-size: 1.125rem;
+    border-radius: .75rem;
+    min-height: 12rem;
+}
+
+/* VARIANT MODIFIERS */
+.text-area-widget--primary {
+    --text-area-bg: var(--primary);
+    --text-area-text-color: var(--primary-text-color);
+    --text-area-border-color: var(--primary-border-color);
+    --text-area-hover-color: var(--primary-text-hover-color);
+    --text-area-focus-color: var(--primary-focus-color);
+    --text-area-label-color: var(--primary-text-color)
+}
+
+.text-area-widget--default {
+    --text-area-bg: var(--basic);
+    --text-area-text-color: var(--basic-text-color);
+    --text-area-border-color: var(--basic-border-color);
+    --text-area-hover-color: var(--basic-text-hover-color);
+    --text-area-focus-color: var(--basic-focus-color);
+    --text-area-label-color: var(--basic-text-color)
+}
+
+.text-area-widget--secondary {
+    --text-area-bg: var(--secondary);
+    --text-area-text-color: var(--secondary-text-color);
+    --text-area-border-color: var(--secondary-border-color);
+    --text-area-hover-color: var(--secondary-text-hover-color);
+    --text-area-focus-color: var(--secondary-focus-color);
+    --text-area-label-color: var(--secondary-text-color)
+}
+
+.text-area-widget--danger {
+    --text-area-bg: var(--danger);
+    --text-area-text-color: var(--danger-text-color);
+    --text-area-border-color: var(--danger-border-color);
+    --text-area-hover-color: var(--danger-text-hover-color);
+    --text-area-focus-color: var(--danger-focus-color);
+    --text-area-label-color: var(--danger-text-color)
+}
+
+.text-area-widget--info {
+    --text-area-bg: var(--info);
+    --text-area-text-color: var(--info-text-color);
+    --text-area-border-color: var(--info-border-color);
+    --text-area-hover-color: var(--info-text-hover-color);
+    --text-area-focus-color: var(--info-focus-color);
+    --text-area-label-color: var(--info-text-color)
+}
+
+.text-area-widget--warning {
+    --text-area-bg: var(--warning);
+    --text-area-text-color: var(--warning-text-color);
+    --text-area-border-color: var(--warning-border-color);
+    --text-area-hover-color: var(--warning-text-hover-color);
+    --text-area-focus-color: var(--warning-focus-color);
+    --text-area-label-color: var(--warning-text-color)
+}
+
+.text-area-widget--success {
+    --text-area-bg: var(--success);
+    --text-area-text-color: var(--success-text-color);
+    --text-area-border-color: var(--success-border-color);
+    --text-area-hover-color: var(--success-text-hover-color);
+    --text-area-focus-color: var(--success-focus-color);
+    --text-area-label-color: var(--success-text-color)
+}
+
+.text-area-widget--error {
+    --text-area-bg: var(--error);
+    --text-area-text-color: var(--error-text-color);
+    --text-area-border-color: var(--error-border-color);
+    --text-area-hover-color: var(--error-text-hover-color);
+    --text-area-focus-color: var(--error-focus-color);
+    --text-area-label-color: var(--error-text-color)
+}
+
+/* CONTAINERS */
+.text-area-outter-container-widget {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: var(--gap, 8px);
+}
+
+.text-area-inner-container-widget {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: var(--gap, 8px);
+}
+
+.text-area-inner-container-widget i {
+    color: var(--text-area-text-color);
+    transition: color .3s ease;
+}
+
+/* LABEL */
+.text-area-label-widget {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    transition: all .3s cubic-bezier(.4, 0, .2, 1);
+    color: var(--text-area-label-color);
+    padding: 0 4px;
+    z-index: 1;
+    pointer-events: none;
+    background: var(--text-area-bg, var(--text-area-bg-color));
+    font-size: .9rem;
+}
+
+.text-area-label-floating-widget {
+    top: 0;
+    font-size: .75rem;
+    background-color: transparent;
+    transform: translateY(-50%) scale(.9);
+}
+
+/* INPUT BASE */
+.text-area-widget {
+    display: block;
+    width: 100%;
+    line-height: 1.5;
+    color: var(--text-area-text-color);
+    background: var(--text-area-bg, var(--text-area-bg-color));
+    border: 1px solid var(--text-area-border-color);
+    outline: none;
+    transition: all .3s cubic-bezier(.4, 0, .2, 1);
+    box-shadow: 0 1px 3px var(--shadow-color-10);
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.text-area-widget::placeholder {
+    color: var(--text-area-text-color);
+    opacity: .6;
+}
+
+.text-area-widget:hover {
+    border-color: var(--text-area-hover-border-color);
+    box-shadow: 0 2px 6px var(--shadow-color-15);
+    transform: translateY(-1px);
+}
+
+.text-area-widget:focus {
+    border-color: var(--text-area-focus-color);
+    box-shadow: 0 0 0 3px var(--text-area-focus-color);
+    transform: scale(1.005);
+}
+
+.text-area-widget:disabled {
+    background-color: #f7fafc;
+    opacity: .7;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.text-area-invalid-state-widget {
+    border-color: var(--input-error-color);
+    box-shadow: 0 0 0 3px var(--input-error-shadow);
+}
+
+/* ERROR */
+.text-area-error-message-widget {
+    color: var(--input-error-color);
+    font-size: .875rem;
+    margin-top: 4px;
+    display: none;
+    width: 100%;
+    text-align: left;
+    font-weight: 500;
+}
+
+.text-area-error-message-widget.show {
+    display: block;
+    animation: slideDownFadeIn .3s ease;
+}
+
+@keyframes slideDownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

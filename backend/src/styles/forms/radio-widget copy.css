@@ -1,0 +1,304 @@
+@import "./_variables.css";
+
+/* SIZE MODIFIERS */
+.radio-widget--xsmall {
+    --radio-size: 1.125rem;
+    --label-font-size: 0.75rem;
+    --gap: 6px;
+    --checkmark-size: 0.5rem;
+    --checkmark-border-width: 2px;
+}
+
+.radio-widget--small {
+    --radio-size: 1.375rem;
+    --label-font-size: 0.85rem;
+    --gap: 7px;
+    --checkmark-size: 0.6rem;
+    --checkmark-border-width: 2px;
+}
+
+.radio-widget--medium {
+    --radio-size: 1.625rem;
+    --label-font-size: 0.9rem;
+    --gap: 8px;
+    --checkmark-size: 0.7rem;
+    --checkmark-border-width: 2px;
+}
+
+.radio-widget--large {
+    --radio-size: 1.875rem;
+    --label-font-size: 1rem;
+    --gap: 9px;
+    --checkmark-size: 0.8rem;
+    --checkmark-border-width: 3px;
+}
+
+.radio-widget--xlarge {
+    --radio-size: 2.125rem;
+    --label-font-size: 1.125rem;
+    --gap: 10px;
+    --checkmark-size: 0.9rem;
+    --checkmark-border-width: 3px;
+}
+
+/* VARIANT MODIFIERS */
+.radio-widget--primary {
+    --radio-bg: var(--primary, #007bff);
+    --radio-checked-bg: var(--primary-dark, #0056b3);
+    --radio-border-color: var(--primary-border-color, #0056b3);
+    --radio-text-color: var(--primary-text-color, #ffffff);
+    --radio-hover-color: var(--primary-text-hover-color, #003087);
+    --radio-focus-color: var(--primary-focus-color, rgba(0, 123, 255, 0.3));
+    --radio-label-color: var(--primary-label-color, #333333);
+}
+
+.radio-widget--default {
+    --radio-bg: var(--basic, #ffffff);
+    --radio-checked-bg: var(--basic-dark, #6b7280);
+    --radio-border-color: var(--basic-border-color, #6b7280);
+    --radio-text-color: var(--basic-text-color, #ffffff);
+    --radio-hover-color: var(--basic-text-hover-color, #4b5563);
+    --radio-focus-color: var(--basic-focus-color, rgba(107, 114, 128, 0.3));
+    --radio-label-color: var(--basic-label-color, #333333);
+}
+
+.radio-widget--secondary {
+    --radio-bg: var(--secondary, #6b7280);
+    --radio-checked-bg: var(--secondary-dark, #4b5563);
+    --radio-border-color: var(--secondary-border-color, #4b5563);
+    --radio-text-color: var(--secondary-text-color, #ffffff);
+    --radio-hover-color: var(--secondary-text-hover-color, #374151);
+    --radio-focus-color: var(--secondary-focus-color, rgba(107, 114, 128, 0.3));
+    --radio-label-color: var(--secondary-label-color, #333333);
+}
+
+.radio-widget--danger {
+    --radio-bg: var(--danger, #dc3545);
+    --radio-checked-bg: var(--danger-dark, #b91c1c);
+    --radio-border-color: var(--danger-border-color, #b91c1c);
+    --radio-text-color: var(--danger-text-color, #ffffff);
+    --radio-hover-color: var(--danger-text-hover-color, #991b1b);
+    --radio-focus-color: var(--danger-focus-color, rgba(220, 53, 69, 0.3));
+    --radio-label-color: var(--danger-label-color, #333333);
+}
+
+.radio-widget--info {
+    --radio-bg: var(--info, #0dcaf0);
+    --radio-checked-bg: var(--info-dark, #0aa2c0);
+    --radio-border-color: var(--info-border-color, #0aa2c0);
+    --radio-text-color: var(--info-text-color, #ffffff);
+    --radio-hover-color: var(--info-text-hover-color, #087f9b);
+    --radio-focus-color: var(--info-focus-color, rgba(13, 202, 240, 0.3));
+    --radio-label-color: var(--info-label-color, #333333);
+}
+
+.radio-widget--warning {
+    --radio-bg: var(--warning, #ffc107);
+    --radio-checked-bg: var(--warning-dark, #cc9a06);
+    --radio-border-color: var(--warning-border-color, #cc9a06);
+    --radio-text-color: var(--warning-text-color, #333333);
+    --radio-hover-color: var(--warning-text-hover-color, #997404);
+    --radio-focus-color: var(--warning-focus-color, rgba(255, 193, 7, 0.3));
+    --radio-label-color: var(--warning-label-color, #333333);
+}
+
+.radio-widget--success {
+    --radio-bg: var(--success, #28a745);
+    --radio-checked-bg: var(--success-dark, #1f7a33);
+    --radio-border-color: var(--success-border-color, #1f7a33);
+    --radio-text-color: var(--success-text-color, #ffffff);
+    --radio-hover-color: var(--success-text-hover-color, #19672a);
+    --radio-focus-color: var(--success-focus-color, rgba(40, 167, 69, 0.3));
+    --radio-label-color: var(--success-label-color, #333333);
+}
+
+.radio-widget--error {
+    --radio-bg: var(--error, #dc3545);
+    --radio-checked-bg: var(--error-dark, #b91c1c);
+    --radio-border-color: var(--error-border-color, #b91c1c);
+    --radio-text-color: var(--error-text-color, #ffffff);
+    --radio-hover-color: var(--error-text-hover-color, #991b1b);
+    --radio-focus-color: var(--error-focus-color, rgba(220, 53, 69, 0.3));
+    --radio-label-color: var(--error-label-color, #333333);
+}
+
+/* CONTAINER */
+.radio-container-widget {
+    display: flex;
+    align-items: center;
+    gap: var(--gap, 8px);
+    cursor: pointer;
+    width: fit-content;
+    padding: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.radio-container-widget:hover:not(.radio-container-widget:disabled) {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+}
+
+.radio-container-widget:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Label positioning */
+.radio-container-widget.radio-label-left {
+    flex-direction: row-reverse;
+}
+
+.radio-container-widget.radio-label-right {
+    flex-direction: row;
+}
+
+.radio-container-widget.radio-label-top {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.radio-container-widget.radio-label-bottom {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+}
+
+/* LABEL */
+.radio-label-widget {
+    color: var(--radio-label-color);
+    font-size: var(--label-font-size, 0.9rem);
+    font-weight: 500;
+    user-select: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+/* INPUT BASE */
+.radio-input-widget {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: var(--radio-size, 1.625rem);
+    height: var(--radio-size, 1.625rem);
+    border: 2px solid var(--radio-border-color);
+    background: var(--radio-bg);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    outline: none;
+    flex-shrink: 0;
+}
+
+.radio-input-widget:hover:not(:disabled) {
+    border-color: var(--radio-hover-color);
+    box-shadow: 0 0 0 2px var(--radio-hover-color);
+}
+
+.radio-input-widget:focus:not(:disabled) {
+    border-color: var(--radio-focus-color);
+    box-shadow: 0 0 0 3px var(--radio-focus-color);
+}
+
+.radio-input-widget:disabled {
+    background-color: #f7fafc;
+    border-color: #d1d5db;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* CHECKED STATE */
+.radio-input-widget.radio-checked {
+    background: var(--radio-checked-bg);
+    border-color: var(--radio-checked-bg);
+}
+
+.radio-input-widget.radio-checked::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--checkmark-size, 0.7rem);
+    height: calc(var(--checkmark-size, 0.7rem) / 2);
+    border: solid var(--radio-text-color);
+    border-width: 0 0 var(--checkmark-border-width, 2px) var(--checkmark-border-width, 2px);
+    transform: translate(-65%, -50%) rotate(-45deg);
+    transform-origin: center;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* INDETERMINATE STATE */
+.radio-input-widget:indeterminate::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--checkmark-size, 0.7rem);
+    height: var(--checkmark-border-width, 2px);
+    background: var(--radio-text-color);
+    transform: translate(-50%, -50%);
+    transition: opacity 0.2s ease;
+}
+
+/* INVALID STATE */
+.radio-input-widget.radio-invalid-state-widget {
+    border-color: var(--radio-error-color, #dc3545);
+    box-shadow: 0 0 0 3px var(--radio-error-shadow, rgba(220, 53, 69, 0.3));
+}
+
+/* ERROR */
+.radio-error-message-widget {
+    color: var(--radio-error-color, #dc3545);
+    font-size: 0.75rem;
+    margin-top: 4px;
+    display: none;
+    width: 100%;
+    text-align: left;
+    font-weight: 500;
+    animation: slideDownFadeIn 0.3s ease;
+}
+
+.radio-error-message-widget[style*="display: block"] {
+    display: block;
+}
+
+@keyframes slideDownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* HIGH CONTRAST MODE */
+@media (prefers-contrast: high) {
+    .radio-input-widget {
+        border-width: 3px;
+    }
+    .radio-input-widget.radio-checked::after {
+        border-width: 0 0 var(--checkmark-border-width, 3px) var(--checkmark-border-width, 3px);
+    }
+    .radio-input-widget:indeterminate::after {
+        height: var(--checkmark-border-width, 3px);
+    }
+}
+
+/* REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+    .radio-input-widget,
+    .radio-container-widget,
+    .radio-label-widget,
+    .radio-error-message-widget {
+        transition: none;
+    }
+    @keyframes slideDownFadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+}

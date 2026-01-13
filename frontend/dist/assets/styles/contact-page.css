@@ -1,0 +1,178 @@
+.c-contact-page-root {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px; 
+    background-color: #f7f9fc;
+    background-image: radial-gradient(
+        circle at top left, 
+        #ffffff 0%,
+        #f0f2f5 75%,
+        #e3e6eb 100%
+    );
+    color: #1a202c; 
+}
+
+.c-section-header {
+    text-align: center;
+    padding: 0 50px 100px 50px; 
+}
+
+.c-header-subtitle {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #b8860b; 
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.c-header-title {
+    font-size: 3.2rem; 
+    font-weight: 800;
+    color: #1a202c;
+    margin-bottom: 25px;
+    line-height: 1.15;
+}
+
+.c-header-description {
+    font-size: 1.2rem;
+    color: #4a5568; 
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.c-contact-form-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 80px;
+    padding-bottom: 100px;
+}
+
+@media (max-width: 900px) {
+    .c-contact-form-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+.c-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.c-form-input,
+.c-form-textarea {
+    width: 100%;
+    padding: 18px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px; 
+    font-size: 1rem;
+    color: #1a202c;
+    transition: all 0.3s ease;
+    height: 60px;
+}
+
+.c-form-textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.c-form-input:focus,
+.c-form-textarea:focus {
+    border-color: #b8860b;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(184, 134, 11, 0.2); 
+    background-color: #ffffff;
+}
+
+.c-form-submit-button {
+    padding: 1rem 2rem!important;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: auto;
+    width: 100%;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-wrap: nowrap;
+}
+
+.c-form-submit-standard-button {
+    background: transparent;
+    border: 2px solid var(--i-blue-light);
+    color: var(--i-blue-light);
+}
+
+.c-form-submit-button:hover {
+    background: var(--i-blue-light) !important;
+    color: var(--i-white) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(96, 165, 250, 0.2);
+}
+
+.c-contact-info-block {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 40px;
+}
+
+.c-detail-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+.c-detail-icon {
+    font-size: 1.8rem;
+    color: #b8860b;
+    margin-top: 2px;
+}
+
+.c-detail-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 6px;
+}
+
+.c-detail-value {
+    font-size: 1.05rem;
+    color: #5f6b7d;
+    line-height: 1.5;
+}
+
+.c-map-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.c-map-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #1a202c;
+    margin-bottom: 40px;
+}
+
+.c-map-placeholder {
+    border: 1px solid #e0e0e0;
+    border-radius: 12px; 
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f9fc;
+}
+
+.c-map-text {
+    font-size: 1.3rem;
+    color: #9aa5b8;
+    padding: 20px;
+}

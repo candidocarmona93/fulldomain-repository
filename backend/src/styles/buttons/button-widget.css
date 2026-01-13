@@ -1,0 +1,337 @@
+/* button-widget.css */
+@import url('../root.css');
+
+/* ===== CSS VARIABLES FOR CONSISTENCY ===== */
+.button-widget {
+  --button-transition-duration: 0.2s;
+  --button-transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+  --button-focus-ring-width: 3px;
+  --button-border-width: 1px;
+}
+
+/* ===== BASE COMPONENT ===== */
+.button-widget {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  border: var(--button-border-width) solid;
+  transition: all var(--button-transition-duration) var(--button-transition-timing);
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  box-shadow: 0 2px 4px var(--shadow-color-10);
+
+  /* Base colors */
+  background: var(--button-bg);
+  color: var(--button-text-color);
+  border-color: var(--button-border-color);
+
+  /* Fallback defaults */
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  gap: 8px;
+}
+
+/* Remove button native styles when using button element */
+.button-widget[type="button"],
+.button-widget[type="submit"],
+.button-widget[type="reset"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* ===== SIZE MODIFIERS ===== */
+.button-widget--xsmall {
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  gap: 4px;
+  min-height: 24px;
+}
+
+.button-widget--small {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  gap: 6px;
+  min-height: 32px;
+}
+
+.button-widget--medium {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  gap: 8px;
+  min-height: 40px;
+}
+
+.button-widget--large {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 10px;
+  gap: 10px;
+  min-height: 48px;
+}
+
+.button-widget--xlarge {
+  padding: 12px 24px;
+  font-size: 1.125rem;
+  border-radius: 12px;
+  gap: 12px;
+  min-height: 56px;
+}
+
+/* ===== VARIANT MODIFIERS ===== */
+.button-widget--primary {
+  --button-bg: var(--primary);
+  --button-text-color: var(--primary-text-color);
+  --button-border-color: var(--primary-border-color);
+  --button-hover-color: var(--primary-text-hover-color);
+  --button-bg-hover-color: var(--primary-hover);
+  --button-focus-color: var(--primary-focus-color);
+}
+
+.button-widget--default {
+  --button-bg: var(--default);
+  --button-text-color: var(--default-text-color);
+  --button-border-color: var(--default-border-color);
+  --button-hover-color: var(--default-text-hover-color);
+  --button-bg-hover-color: var(--default-hover);
+  --button-focus-color: var(--default-focus-color);
+}
+
+.button-widget--secondary {
+  --button-bg: var(--secondary);
+  --button-text-color: var(--secondary-text-color);
+  --button-border-color: var(--secondary-border-color);
+  --button-hover-color: var(--secondary-text-hover-color);
+  --button-bg-hover-color: var(--secondary-hover);
+  --button-focus-color: var(--secondary-focus-color);
+}
+
+.button-widget--danger {
+  --button-bg: var(--danger);
+  --button-text-color: var(--danger-text-color);
+  --button-border-color: var(--danger-border-color);
+  --button-hover-color: var(--danger-text-hover-color);
+  --button-bg-hover-color: var(--danger-hover);
+  --button-focus-color: var(--danger-focus-color);
+}
+
+.button-widget--info {
+  --button-bg: var(--info);
+  --button-text-color: var(--info-text-color);
+  --button-border-color: var(--info-border-color);
+  --button-hover-color: var(--info-text-hover-color);
+  --button-bg-hover-color: var(--info-hover);
+  --button-focus-color: var(--info-focus-color);
+}
+
+.button-widget--warning {
+  --button-bg: var(--warning);
+  --button-text-color: var(--warning-text-color);
+  --button-border-color: var(--warning-border-color);
+  --button-hover-color: var(--warning-text-hover-color);
+  --button-bg-hover-color: var(--warning-hover);
+  --button-focus-color: var(--warning-focus-color);
+}
+
+.button-widget--success {
+  --button-bg: var(--success);
+  --button-text-color: var(--success-text-color);
+  --button-border-color: var(--success-border-color);
+  --button-hover-color: var(--success-text-hover-color);
+  --button-bg-hover-color: var(--success-hover);
+  --button-focus-color: var(--success-focus-color);
+}
+
+.button-widget--error {
+  --button-bg: var(--error);
+  --button-text-color: var(--error-text-color);
+  --button-border-color: var(--error-border-color);
+  --button-hover-color: var(--error-text-hover-color);
+  --button-bg-hover-color: var(--error-hover);
+  --button-focus-color: var(--error-focus-color);
+}
+
+/* ===== STATE MANAGEMENT ===== */
+/* Hover state */
+.button-widget:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow-color-20);
+  background-color: var(--button-bg-hover-color, color-mix(in srgb, var(--button-bg) 90%));
+  border-color: var(--button-border-color);
+  color: var(--button-hover-color, var(--button-text-color));
+}
+
+/* Active state */
+.button-widget:not(:disabled):active {
+  transform: translateY(0);
+  box-shadow: 0 1px 3px var(--shadow-color-15);
+  transition-duration: 0.1s;
+}
+
+/* Focus state - improved accessibility */
+.button-widget:not(:disabled):focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 var(--button-focus-ring-width) var(--button-focus-color, color-mix(in srgb, var(--button-bg) 40%)),
+    0 2px 4px var(--shadow-color-10);
+}
+
+/* Disabled state */
+.button-widget:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+/* Loading state utility */
+.button-widget--loading {
+  pointer-events: none;
+  color: transparent !important;
+}
+
+.button-widget--loading::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: button-spin 0.8s linear infinite;
+}
+
+@keyframes button-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== ICON HANDLING ===== */
+.button-widget__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--button-transition-duration) var(--button-transition-timing);
+}
+
+.button-widget:hover .button-widget__icon {
+  transform: scale(1.1);
+}
+
+/* ===== DENSITY MODIFIERS ===== */
+.button-widget--dense {
+  font-weight: 500;
+  letter-spacing: 0.25px;
+}
+
+.button-widget--dense.button-widget--xsmall {
+  padding: 2px 6px;
+  min-height: 20px;
+}
+
+.button-widget--dense.button-widget--small {
+  padding: 4px 10px;
+  min-height: 28px;
+}
+
+.button-widget--dense.button-widget--medium {
+  padding: 6px 14px;
+  min-height: 36px;
+}
+
+/* ===== DARK MODE ENHANCEMENTS ===== */
+@media (prefers-color-scheme: dark) {
+  .button-widget {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  .button-widget:not(:disabled):hover {
+    background-color: var(--button-bg-hover-color, color-mix(in srgb, var(--button-bg) 85%));
+  }
+}
+
+/* ===== HIGH CONTRAST MODE SUPPORT ===== */
+@media (prefers-contrast: high) {
+  .button-widget {
+    --button-border-width: 2px;
+    text-shadow: none;
+  }
+
+  .button-widget:not(:disabled):focus-visible {
+    --button-focus-ring-width: 4px;
+    outline: 1px solid CanvasText;
+  }
+}
+
+/* ===== REDUCED MOTION SUPPORT ===== */
+@media (prefers-reduced-motion: reduce) {
+  .button-widget {
+    --button-transition-duration: 0.01s;
+    transition-duration: 0.01s;
+  }
+
+  .button-widget:not(:disabled):hover {
+    transform: none;
+  }
+
+  .button-widget--loading::after {
+    animation-duration: 2s;
+  }
+}
+
+/* Icon Button Component */
+.icon-button {
+  padding: 8px;
+  width: auto;
+  height: auto;
+  border: none;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  gap: 0;
+
+  background: var(--button-bg);
+  color: var(--button-text-color);
+  border-color: var(--button-border-color);
+
+  /* States */
+  &:hover {
+    background-color: var(--button-hover-color);
+    box-shadow: 0 4px 8px var(--shadow-color-15);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: scale(0.95);
+    box-shadow: 0 1px 2px var(--shadow-color-10);
+  }
+
+  &:disabled {
+    background-color: var(--shadow-color-10);
+    color: var(--shadow-color);
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+  }
+}

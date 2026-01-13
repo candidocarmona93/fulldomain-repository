@@ -1,0 +1,113 @@
+:root {
+    /* Color Variables from the JS file */
+    --vc-color-primary: #4a90e2;
+    --vc-color-secondary: #6c757d;
+    --vc-color-success: #28a745;
+    --vc-color-warning: #ffc107;
+    --vc-color-danger: #dc3545;
+    --vc-color-light: #f8f9fa;
+    --vc-color-border: #e9ecef;
+    --vc-color-text-light: #888;
+    --vc-color-text-dark: #495057;
+    --vc-color-background: #ffffff;
+}
+
+
+.task-card {
+    border-radius: 12px;
+    border: 1px solid var(--vc-color-border);
+    background: white;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.task-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.task-card.priority-urgent {
+    border-left: 4px solid #dc3545;
+}
+
+.task-card.priority-high {
+    border-left: 4px solid #ffc107;
+}
+
+.task-card.task-overdue {
+    border-left: 4px solid #dc3545;
+}
+
+.task-compact-title,
+.task-detail-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--vc-color-text-dark);
+}
+
+.task-compact-description,
+.task-detail-description {
+    font-size: 0.8rem;
+    color: var(--vc-color-text-light);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.task-compact-assignee,
+.task-compact-due-date {
+    font-size: 0.75rem;
+    color: var(--vc-color-text-light);
+}
+
+.overdue {
+    color: var(--vc-color-danger) !important;
+    font-weight: 600;
+}
+
+.task-section-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--vc-color-secondary);
+    font-weight: 600;
+}
+
+.task-due-text,
+.task-assignee-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.task-notes-box {
+    background: var(--vc-color-light);
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--vc-color-border);
+    font-size: 0.85rem;
+}
+
+.task-priority-icon.priority-urgent {
+    color: #dc3545;
+}
+
+.task-priority-icon.priority-high {
+    color: #ffc107;
+}
+
+.task-priority-text {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.task-meta {
+    font-size: 0.7rem;
+    color: var(--vc-color-text-light);
+}
+
+.task-details-link {
+    color: var(--vc-color-primary);
+    font-weight: 500;
+    font-size: 0.8rem;
+}

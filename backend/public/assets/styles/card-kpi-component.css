@@ -1,0 +1,86 @@
+@import url("./root.css");
+.success {
+    --bg-bottom-border-color: linear-gradient(to bottom, #007bff, #0062cc);
+    --text-color: #f0f8ff;
+}
+
+.danger {
+    --bg-bottom-border-color: linear-gradient(to bottom, #dc3545, #c82333);
+    --text-color: #f0f8ff;
+}
+
+.info {
+    --bg-bottom-border-color: linear-gradient(to bottom, #17a2b8, #138496);
+    --text-color: #f0f8ff;
+}
+
+.warning {
+    --bg-bottom-border-color: linear-gradient(to bottom, #ffc107, #e0a800);
+    --text-color: #212529;
+}
+
+.primary {
+    --bg-bottom-border-color: linear-gradient(to bottom, #0d6efd, #0b5ed7);
+    --text-color: #ffffff;
+}
+
+.secondary {
+    --bg-bottom-border-color: linear-gradient(to bottom, #6c757d, #5a6268);
+    --text-color: #ffffff;
+}
+
+.light {
+    --bg-bottom-border-color: linear-gradient(to bottom, #f8f9fa, #e2e6ea);
+    --text-color: #212529;
+}
+
+.dark {
+    --bg-bottom-border-color: linear-gradient(to bottom, #343a40, #1d2124);
+    --text-color: #f8f9fa;
+}
+.card-kpi-component {
+    background: var(--bg-bottom-border-color);
+    color: var(--text-color);
+    padding: 24px;
+    width: 100%;
+    border-radius: var(--radius-large);
+    box-shadow: var(--box-shadow-large);
+    transition: var(--transition-spring);
+    position: relative;
+    overflow: hidden;
+
+    .kpi-content-component {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+        color: var(--text-color);
+
+        .kpi-label-component {
+            font-weight: 500;
+            font-size: 16px;
+            color: var(--text-color);
+        }
+
+        i {
+            font-size: 24px;
+        }
+    }
+
+    .kpi-value-component {
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--text-color);
+        letter-spacing: -0.025em;
+    }
+
+    .kpi-border-bottom-gradient {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 12px;
+        background: linear-gradient(to right, rgba(0, 0, 0, .95), transparent);
+        opacity: 0.2;
+    }
+}

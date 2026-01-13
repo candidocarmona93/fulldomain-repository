@@ -1,0 +1,32 @@
+@import url('../root.css');
+
+:root {
+    --text-color: #374151;
+}
+
+.paginator-widget {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 16px;
+}
+
+.paginator-button-item-widget {
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    min-width: 36px;
+}
+
+.paginator-ellipsis-item-widget {
+    padding: 0 8px;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.paginator-label-widget {
+    padding: 0 8px;
+    color: var(--text-color);
+    font-weight: bold;
+}

@@ -1,0 +1,36 @@
+/* src/styles/layouts/stack-widget.css */
+@import "../root.css";
+
+.stack-widget {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  min-height: 1px;
+  box-sizing: border-box;
+}
+
+/* Size variants */
+.stack-widget--xsmall { gap: 4px; }
+.stack-widget--small  { gap: 8px; }
+.stack-widget--medium { gap: 12px; }
+.stack-widget--large  { gap: 16px; }
+.stack-widget--xlarge { gap: 20px; }
+
+/* Direction */
+.stack-widget--horizontal { flex-direction: row; align-items: center; }
+
+/* Visual styles */
+.stack-widget--bordered {
+  border: 1px solid var(--stack-border-color, #ddd);
+  border-radius: 8px;
+  padding: 16px;
+  background: var(--stack-bg, white);
+}
+
+.stack-widget--shadow {
+  box-shadow: 0 4px 12px var(--shadow-color-10);
+  border-radius: 8px;
+  padding: 16px;
+}

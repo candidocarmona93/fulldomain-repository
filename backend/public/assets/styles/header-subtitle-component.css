@@ -1,0 +1,7 @@
+@import url("./root.css");
+
+.header-subtitle-component {
+    font-size: .825rem;
+    font-weight: 600;
+    line-height: 1.4;
+}

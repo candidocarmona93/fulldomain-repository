@@ -1,0 +1,121 @@
+@import url("../root.css");
+
+.tile-widget--primary {
+  --tile-bg: var(--primary);
+  --tile-text-color: var(--primary-text-color);
+  --tile-border-color: var(--primary-border-color);
+  --tile-hover-color: var(--primary-text-hover-color);
+}
+
+.tile-widget--default {
+  --tile-bg: var(--default);
+  --tile-text-color: var(--default-text-color);
+  --tile-border-color: var(--default-border-color);
+  --tile-hover-color: var(--default-text-hover-color);
+}
+
+.tile-widget--secondary {
+  --tile-bg: var(--secondary);
+  --tile-text-color: var(--secondary-text-color);
+  --tile-border-color: var(--secondary-border-color);
+  --tile-hover-color: var(--second-text-hover-color);
+}
+
+.tile-widget--danger {
+  --tile-bg: var(--danger);
+  --tile-text-color: var(--danger-text-color);
+  --tile-border-color: var(--danger-border-color);
+  --tile-hover-color: var(--danger-text-hover-color);
+}
+
+.list-tile-widget {
+  width: 100%;
+  min-height: 60px;
+  padding: .5rem;
+  background: white;
+  border-radius: 0;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  cursor: pointer;
+
+  /* Remove bottom border since we're using cards now */
+  &:not(:last-child) {
+    border-bottom: none;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0.08);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  /* Leading icon/widget */
+  .list-tile-leading-widget {
+    flex-shrink: 0;
+    background: linear-gradient(135deg, #4361ee, #3f37c9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 44px;
+    width: 44px;
+    border-radius: 12px;
+    color: white;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 8px rgba(67, 97, 238, 0.2);
+
+    /* Icon adjustment */
+    >* {
+      transform: scale(1.1);
+    }
+  }
+
+  .title-widget {
+    font-size: .9rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-wrap: wrap;
+    text-align: left;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+  }
+
+  .subtitle-widget {
+    font-size: 0.8rem;
+    color: #718096 !important;
+    line-height: 1.4;
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-align: left;
+    text-overflow: ellipsis;
+  }
+
+  /* Trailing widgets (switches, buttons, etc) */
+  .list-tile-trailing-widget {
+    flex-shrink: 0;
+    margin-left: 0.75rem;
+    color: #a0aec0;
+    transition: transform 0.2s;
+    margin-left: 0.5rem;
+    flex-shrink: 0;
+  }
+}
